@@ -1,39 +1,3 @@
-## 矩阵乘法
-2019/4/19  [返回](https://desperadoadil.github.io/DataStructureAndAlgorithms/)
-
----
-### 方法一：
-平凡算法，时间复杂度O(n<sup>3</sup>)，空间复杂度O(n<sup>2</sup>)  
-代码：  
-```c++
-#include <cstdio>
-
-int n, A[11][11], B[11][11], C[11][11];
-
-int main () {
-    scanf ("%d", &n);
-    for (int i = 1; i <= n; i++)
-        for (int j = 1; j <= n; j++)
-            scanf ("%d", &A[i][j]);
-    for (int i = 1; i <= n; i++)
-        for (int j = 1; j <= n; j++)
-            scanf ("%d", &B[i][j]);
-    for (int i = 1; i <= n; i++)
-        for (int j = 1; j <= n; j++)
-            for (int k = 1; k <= n; k++)
-                C[i][j] += A[i][k] * B[k][j];
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= n; j++)
-            printf("%d ", C[i][j]);
-        printf("\n");
-    }
-}
-```
-
-### 方法二：
-递归分治算法，时间复杂度依然是O(n<sup>3</sup>)，空间复杂度O(n<sup>2</sup>)， 并没有什么实质提升  
-代码：  
-```c++
 #include <cstdio>
 #include <cstring>
 #define N 50
@@ -71,4 +35,3 @@ int main () {
     }
     return 0;
 }
-```
